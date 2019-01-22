@@ -159,7 +159,7 @@ function leveler(){
 }
 
 function healthBar(){
-    Engine.color(color.green);
+    Engine.color("green");
     Engine.createRect(0, 60, health * 2, 20);
 }
 
