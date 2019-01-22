@@ -164,7 +164,7 @@ function healthBar(){
 }
 
 function spawnPlayer(){
-    Engine.create(player_x, player_y, 100, 100);
+    player.create(player_x, player_y, 100, 100);
 }
 
 function spawnEnemy(){
