@@ -22,7 +22,7 @@ body{
     top: 0px;
 }
 
-.buttons{
+#buttons{
     display: none;
     position: absolute;
     right: 0px;
