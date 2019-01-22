@@ -47,8 +47,12 @@ var gameOver = document.getElementById("gameOver");
 var gOScore = document.getElementById("scoreCounter");
 var gOLevel = document.getElementById("levelCounter");
 var game = document.getElementById("game");
-var buttons_div = document.getElementsByClassName("buttons");
-var buttons = document.getElementById("buttons");
+var buttons_div = document.getElementsByClassName("buttons_div");
+var buttonUp = document.getElementById("buttonUp");
+var buttonDown = document.getElementById("buttonDown");
+var buttonLeft = document.getElementById("buttonLeft");
+var buttonRight = document.getElementById("buttonRight");
+
 
 //gameover
 gameOver.style.left = canvas.width / 2 + "px";
@@ -495,7 +499,43 @@ function collision(){
 }
 
 function detectingMobile(){
-    if("touchstart" in window){
-        buttons_div.style.display = "block";
-    }
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        // some code..
+        buttonUp.style.display = "block";
+        buttonDown.style.display = "block";
+        buttonLeft.style.display = "block";
+        buttonRight.style.display = "block";
+    }       
+}
+
+buttonUp.ontouchstart = function(){
+        player.up = true;
+}
+
+buttonUp.ontouchend = function(){
+    player.up = false;
+}
+
+buttonDown.ontouchstart = function(){
+        player.down = true;
+}
+
+buttonDown.ontouchend = function(){
+    player.down = false;
+}
+
+buttonLeft.ontouchstart = function(){
+        player.left = true;
+}
+
+buttonLeft.ontouchend = function(){
+    player.left = false;
+}
+
+buttonRight.ontouchstart = function(){
+        player.right = true;
+}
+
+buttonRight.ontouchend = function(){
+    player.right = false;
 }
