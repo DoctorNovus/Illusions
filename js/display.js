@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var display = new Engine.Main();
 var player = new Player();
 var enemy = new Enemies();
