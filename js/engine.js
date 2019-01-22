@@ -5,7 +5,7 @@ class Engine {
     }
 
     static createRect(x,y,width,height){
-        Engine.fillRect(x,y,width,height);
+        Engine.ctx.fillRect(x,y,width,height);
     }
 
     static color(hex_code){
