@@ -995,4 +995,5 @@ function collision(){
             health -= 5 / 4;
      }
 
+    }
 }
