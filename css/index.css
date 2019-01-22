@@ -1,0 +1,24 @@
+body{
+    border: 2px solid blue;
+    background-color: silver;
+    overflow: hidden;
+}
+
+#score_id{
+    position: absolute;
+    left: 10px;
+    top: 0px;
+}
+
+#level_id{
+    position: absolute;
+    left: 10px;
+    top: 20px;
+}
+
+#gameOver{
+    display: none;
+    position: absolute;
+    top: 0px;
+}
+
