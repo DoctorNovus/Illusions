@@ -24,4 +24,6 @@ body{
 
 .buttons{
     display: none;
+    position: absolute;
+    right: 0px;
 }
