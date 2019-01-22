@@ -49,6 +49,8 @@ var gameOver = document.getElementById("gameOver");
 var gOScore = document.getElementById("scoreCounter");
 var gOLevel = document.getElementById("levelCounter");
 var game = document.getElementById("game");
+var buttons_div = document.getElementsByClassName("buttons");
+var buttons = document.getElementById("buttons");
 
 //gameover
 gameOver.style.left = canvas.width / 2 + "px";
@@ -143,6 +145,7 @@ function tick(){
     moveEnemies();
     movement();
     collision();
+    detectingMobile();
     display.tick(tick);
 
 }
@@ -491,4 +494,10 @@ function collision(){
         player_y + 100 > enemy1_y) {
             health -= 5 / 4;
      }
+}
+
+function detectingMobile(){
+    if("touchstart" in window){
+        buttons_div.style.display = "block";
+    }
 }
