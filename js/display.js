@@ -127,6 +127,7 @@ enemy22_y = 300;
 //player objects
 player_x = 200;
 player_y = 200;
+
 Engine.tick(tick);
 
 function tick(){
