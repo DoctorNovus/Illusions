@@ -1,8 +1,7 @@
+window.canvas = document.getElementById("canvas");
+window.ctx = window.canvas.getContext('2d');
+
 class Engine {
-    constructor(){
-        window.canvas = document.getElementById("canvas");
-        window.ctx = this.canvas.getContext('2d');
-    }
 
     static createRect(x,y,width,height){
         window.ctx.fillRect(x,y,width,height);
