@@ -500,7 +500,7 @@ function detectingMobile(){
     if("touchstart" in window){
         buttons_div.style.display = "block";
     }
-
+}
 var display = new Engine.Main();
 var player = new Player();
 var enemy = new Enemies();
@@ -995,5 +995,4 @@ function collision(){
             health -= 5 / 4;
      }
 
-    }
 }
