@@ -91,6 +91,39 @@ enemy10_y = 300;
 enemy11_x = 300;
 enemy11_y = 300;
 
+enemy12_x = 300;
+enemy12_y = 300;
+
+enemy13_x = 300;
+enemy13_y = 300;
+
+enemy14_x = 300;
+enemy14_y = 300;
+
+enemy15_x = 300;
+enemy15_y = 300;
+
+enemy16_x = 300;
+enemy16_y = 300;
+
+enemy17_x = 300;
+enemy17_y = 300;
+
+enemy18_x = 300;
+enemy18_y = 300;
+
+enemy19_x = 300;
+enemy19_y = 300;
+
+enemy20_x = 300;
+enemy20_y = 300;
+
+enemy21_x = 300;
+enemy21_y = 300;
+
+enemy22_x = 300;
+enemy22_y = 300;
+
 //player objects
 player_x = 200;
 player_y = 200;
@@ -119,54 +152,8 @@ function scoreEdit(){
 }
 
 function leveler(){
-    if(score == 1000){
-        level = 2;
-        level_id.innerHTML = "Level: " + level;
-    }
-
-    if(score == 2000){
-        level = 3;
-        level_id.innerHTML = "Level: " + level;
-    }
-
-    if(score == 3000){
-        level = 4;
-        level_id.innerHTML = "Level: " + level;
-    }
-
-    if(score == 4000){
-        level = 5;
-        level_id.innerHTML = "Level: " + level;
-    }
-
-    if(score == 5000){
-        level = 6;
-        level_id.innerHTML = "Level: " + level;
-    }
-    if(score == 6000){
-        level = 7;
-        level_id.innerHTML = "Level: " + level;
-    }
-
-    if(score == 7000){
-        level = 8;
-        level_id.innerHTML = "Level: " + level;
-    }
-
-    if(score == 8000){
-        level = 9;
-        level_id.innerHTML = "Level: " + level;
-    }
-
-    if(score == 9000){
-        level = 10;
-        level_id.innerHTML = "Level: " + level;
-    }
-
-    if(score == 10000){
-        level = 11;
-        level_id.innerHTML = "Level: " + level;
-    }
+    level = score / 1000;
+    level_id.innerHTML = "Level: " + Math.floor(level); 
 
 }
 
@@ -212,6 +199,39 @@ function spawnEnemy(){
     }
     if(level >= 11){
         enemy.create(enemy11_x, enemy11_y, 50, 50);
+    }
+    if(level >= 12){
+        enemy.create(enemy12_x, enemy12_y, 50, 50);
+    }
+    if(level >= 13){
+        enemy.create(enemy13_x * 0.5, enemy13_y * 0.5, 50, 50);
+    }
+    if(level >= 14){
+        enemy.create(enemy14_x, enemy14_y, 50, 50);
+    }
+    if(level >= 15){
+        enemy.create(enemy15_x, enemy15_y, 50, 50);
+    }
+    if(level >= 16){
+        enemy.create(enemy16_x, enemy16_y, 50, 50);
+    }
+    if(level >= 17){
+        enemy.create(enemy17_x, enemy17_y, 50, 50);
+    }
+    if(level >= 18){
+        enemy.create(enemy18_x, enemy18_y, 50, 50);
+    }
+    if(level >= 19){
+        enemy.create(enemy19_x, enemy19_y, 50, 50);
+    }
+    if(level >= 20){
+        enemy.create(enemy20_x, enemy20_y, 50, 50);
+    }
+    if(level >= 21){
+        enemy.create(enemy21_x, enemy21_y, 50, 50);
+    }
+    if(level >= 22){
+        enemy.create(enemy22_x, enemy22_y, 50, 50);
     }
 }
 
@@ -352,6 +372,54 @@ function moveEnemies(){
     if((enemy11_x <= 0) || (enemy11_x >= canvas.width - 50)){
         eleven_velX *= -1.0;
     }
+
+    enemy11_x += one_velX;
+    enemy11_y += one_velY;
+
+
+    enemy12_x += one_velX;
+    enemy12_y += one_velY;
+
+
+    enemy13_x += one_velX;
+    enemy13_y += one_velY;
+
+
+    enemy14_x += one_velX;
+    enemy14_y += one_velY;
+
+
+    enemy15_x += one_velX;
+    enemy15_y += one_velY;
+
+
+    enemy16_x += one_velX;
+    enemy16_y += one_velY;
+
+
+    enemy17_x += one_velX;
+    enemy17_y += one_velY;
+
+
+    enemy18_x += one_velX;
+    enemy18_y += one_velY;
+
+
+    enemy19_x += one_velX;
+    enemy19_y += one_velY;
+
+
+    enemy20_x += one_velX;
+    enemy20_y += one_velY;
+
+
+    enemy21_x += one_velX;
+    enemy21_y += one_velY;
+
+    enemy22_x += one_velX;
+    enemy22_y += one_velY;
+
+
 }
 
 document.addEventListener('keydown',handleKeyDown,false);
