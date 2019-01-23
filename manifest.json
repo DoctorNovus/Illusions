@@ -1,0 +1,17 @@
+{
+    "short_name": "Illusion",
+    "name": "Illusion",
+    "description": "a game of illusions, doge the real enemy",
+    "start_url": "/index.html",
+    "scope": "/",
+    "display": "fullscreen",
+    "icons": [
+        {
+            "src": "illusions.jpg",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ],
+    "theme_color": "#242424",
+    "background_color": "#242424"
+}

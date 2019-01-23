@@ -33,7 +33,7 @@ var enemyList = [
 ];
 
 //enemy objects
-for(let i=0; i<150; i++){
+for(let i=0; i<10; i++){
     enemyList.push(new Enemy());
 }
 
