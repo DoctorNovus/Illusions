@@ -19,11 +19,11 @@ class Enemy{
 
     update(canvas){
            if(this.velX == null){
-                this.velX = 5;
+                this.velX = 20;
            }
 
            if(this.velY == null){
-                this.velY = 5;
+                this.velY = 20;
            }
 
            if((this.y <= 10) || (this.y >= canvas.height - 50)){
