@@ -1,43 +1,8 @@
-var player = new Player();
-var enemy = new Enemy();
+var player = new Player(200,200,100,100);
 
 //variables
 var score = 0;
 var level = 1;
-
-var one_velX = 11.0 * 4;
-var one_velY = 11.0 * 4;
-
-var two_velX = 10.0 * 4;
-var two_velY = 10.0 * 4;
-
-var three_velX = 9.0 * 4;
-var three_velY = 9.0 * 4;
-
-var four_velX = 8.0 * 4;
-var four_velY = 8.0 * 4;
-
-var five_velX = 7.0 * 4;
-var five_velY = 7.0 * 4;
-
-var six_velX = 6.0 * 4;
-var six_velY = 6.0 * 4;
-
-var seven_velX = 5.0 * 4;
-var seven_velY = 5.0 * 4;
-
-var eight_velX = 4.0 * 4;
-var eight_velY = 4.0 * 4;
-
-var nine_velX = 3.0 * 4;
-var nine_velY = 3.0 * 4;
-
-var ten_velX = 2.0 * 4;
-var ten_velY = 2.0 * 4;
-
-var eleven_velX = 1.0 * 4;
-var eleven_velY = 1.0 * 4;
-
 var health = 100;
 
 //ids
@@ -57,9 +22,6 @@ var buttonRight = document.getElementById("buttonRight");
 //gameover
 gameOver.style.left = canvas.width / 2 + "px";
 gameOver.style.top = canvas.height / 2 + "px";
-//player objects
-player_x = 0;
-player_y = 0;
 
 //velocity
 velX = 5.0;
@@ -74,11 +36,6 @@ var enemyList = [
 for(let i=0; i<50; i++){
     enemyList.push(new Enemy());
 }
-
-
-//player objects
-player_x = 200;
-player_y = 200;
 
 Engine.tick(tick);
 
@@ -119,7 +76,7 @@ function healthBar(){
 }
 
 function spawnPlayer(){
-    player.create(player_x, player_y, 100, 100);
+    player.create();
 }
 
 function spawnEnemy(){
@@ -167,20 +124,20 @@ function handleKeyDown(event){
 }
 
 function movement(){
-    if(player.up && player_y >= 0){
-        player_y -= 20;
+    if(player.up && player.y >= 0){
+        player.y -= 20;
     }
 
-    if(player.down && player_y <= window.innerHeight - 125){
-        player_y += 20;
+    if(player.down && player.y <= window.innerHeight - 125){
+        player.y += 20;
     }
 
-    if(player.left && player_x >= 0){
-        player_x -= 20;
+    if(player.left && player.x >= 0){
+        player.x -= 20;
     }
 
-    if(player.right && player_x <= window.innerWidth - 125){
-        player_x += 20;
+    if(player.right && player.x <= window.innerWidth - 125){
+        player.x += 20;
     }
 }
 
@@ -192,10 +149,10 @@ function collision(){
         gOLevel.innerHTML = "Level: " + level;
     }
 
-    if (player_x < enemyList[0].x + 50 &&
-        player_x + 100 > enemyList[0].x &&
-        player_y < enemyList[0].y + 50 &&
-        player_y + 100 > enemyList[0].y) {
+    if (player.x < enemyList[0].x + 50 &&
+        player.x + 100 > enemyList[0].x &&
+        player.y < enemyList[0].y + 50 &&
+        player.y + 100 > enemyList[0].y) {
             health -= 5 / 4;
      }
 }
