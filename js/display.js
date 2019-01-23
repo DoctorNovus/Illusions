@@ -52,7 +52,7 @@ function tick(){
     movement();
     for(let i in enemyList){
         let enemy = enemyList[i];
-        enemy.update(velX,velY,canvas);
+        enemy.update(canvas);
     }
     collision();
     detectingMobile();
