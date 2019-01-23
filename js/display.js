@@ -62,8 +62,8 @@ player_x = 0;
 player_y = 0;
 
 //velocity
-velX = 5;
-velY = 5;
+velX = 5.0;
+velY = 5.0;
 
 //enemy list
 var enemyList = [
@@ -71,7 +71,7 @@ var enemyList = [
 ];
 
 //enemy objects
-for(let i=0; i<23; i++){
+for(let i=0; i<50; i++){
     enemyList.push(new Enemy());
 }
 
@@ -97,6 +97,7 @@ function tick(){
         let enemy = enemyList[i];
         enemy.update(velX,velY,canvas);
     }
+    collision();
     detectingMobile();
     Engine.tick(tick);
 
@@ -181,6 +182,22 @@ function movement(){
     if(player.right && player_x <= window.innerWidth - 125){
         player_x += 20;
     }
+}
+
+function collision(){
+    if(health <= 0){
+        gameOver.style.display = "block";
+        game.style.display = "none";
+        gOScore.innerHTML = "Score: " + score;
+        gOLevel.innerHTML = "Level: " + level;
+    }
+
+    if (player_x < enemyList[0].x + 50 &&
+        player_x + 100 > enemyList[0].x &&
+        player_y < enemyList[0].y + 50 &&
+        player_y + 100 > enemyList[0].y) {
+            health -= 5 / 4;
+     }
 }
 
 function detectingMobile(){

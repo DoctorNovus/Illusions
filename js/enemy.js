@@ -1,7 +1,7 @@
 class Enemy{
     constructor(){
-        this.x = 100;
-        this.y = 100;
+        this.x = Math.floor(Math.random() * 1000) + 1;
+        this.y = Math.floor(Math.random() * 1000) + 1;
     }
 
     create(x,y,width,height){
@@ -9,22 +9,21 @@ class Enemy{
         this.y = y;
         Engine.color("red");
         Engine.createRect(this.x, this.y, width, height);
-        this.velX = 5.0;
-        this.velY = 5.0;
+        this.velX = -5;
+        this.velY = -5;
     }
 
     update(one_velX, one_velY, canvas){
-            this.velX = one_velX;
-            this.velY = one_velY;
-            this.x += this.velX;
-            this.y += this.velY;
-    
-            if((this.y <= 0) || (this.y >= canvas.height - 50)){
-                    this.velY *= -1.0;
+           if((this.y <= 10) || (this.y >= canvas.height - 50)){
+                    one_velY *= -1;
             }
     
-            if((this.x <= 0) || (this.x >= canvas.width - 50)){
-                    this.velX *= -1.0;
+            if((this.x <= 10) || (this.x >= canvas.width - 50)){
+                    one_velX *= -1;
             }
+
+            this.x += one_velX;
+            this.y += one_velY;
+             
     }
 }
