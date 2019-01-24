@@ -17,7 +17,19 @@ var buttonUp = document.getElementById("buttonUp");
 var buttonDown = document.getElementById("buttonDown");
 var buttonLeft = document.getElementById("buttonLeft");
 var buttonRight = document.getElementById("buttonRight");
+var resetButton = document.getElementById("reset");
 
+buttonUp.style.width = 75 + "px";
+buttonUp.style.height = 75 + "px";
+
+buttonDown.style.width = 75 + "px";
+buttonDown.style.height = 75 + "px";
+
+buttonLeft.style.width = 75 + "px";
+buttonLeft.style.height = 75 + "px";
+
+buttonRight.style.width = 75 + "px";
+buttonRight.style.height = 75 + "px";
 
 //gameover
 gameOver.style.left = canvas.width / 2 + "px";
@@ -38,6 +50,7 @@ for(let i=0; i<10; i++){
 }
 
 Engine.tick(tick);
+Engine.zoom(100);
 
 function tick(){
     Engine.clear();
@@ -146,7 +159,7 @@ function collision(){
         gameOver.style.display = "block";
         game.style.display = "none";
         gOScore.innerHTML = "Score: " + score;
-        gOLevel.innerHTML = "Level: " + level;
+        gOLevel.innerHTML = "Level: " + Math.floor(level);
     }
 
     if (player.x < enemyList[0].x + 50 &&
@@ -160,10 +173,17 @@ function collision(){
 function detectingMobile(){
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         // some code..
-        buttonUp.style.display = "block";
-        buttonDown.style.display = "block";
-        buttonLeft.style.display = "block";
-        buttonRight.style.display = "block";
+        if(health > 0){
+            buttonUp.style.display = "block";
+            buttonDown.style.display = "block";
+            buttonLeft.style.display = "block";
+            buttonRight.style.display = "block";
+        } else {
+            buttonUp.style.display = "none";
+            buttonDown.style.display = "none";
+            buttonLeft.style.display = "none";
+            buttonRight.style.display = "none";
+        }
     }       
 }
 
@@ -198,3 +218,7 @@ buttonRight.ontouchstart = function(){
 buttonRight.ontouchend = function(){
     player.right = false;
 }
+
+resetButton.onclick = function(){window.location.reload()}
+
+resetButton.ontouchstart = function(){window.location.reload()}

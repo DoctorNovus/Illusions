@@ -1,11 +1,11 @@
 class Enemy{
     constructor(){
         if(this.x == null){
-            this.x = Math.floor(Math.random() * 1000) + 1;
+            this.x = Math.floor(Math.random() * canvas.width) + 1;
        }
 
        if(this.y == null){
-            this.y = Math.floor(Math.random() * 1000) + 1;
+            this.y = Math.floor(Math.random() * canvas.height) + 1;
        }
     }
 

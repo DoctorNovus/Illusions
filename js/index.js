@@ -1,3 +1,3 @@
-canvas.width = window.innerWidth - 25;
-canvas.height = window.innerHeight - 25;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 

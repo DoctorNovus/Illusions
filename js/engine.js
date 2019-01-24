@@ -23,4 +23,7 @@ class Engine {
         window.ctx.fillText(("X: " + x + ", Y: "  + y), x, y);
     }
 
+    static zoom(scale_number){
+        document.body.style.zoom = scale_number + "%";
+    }   
 }
