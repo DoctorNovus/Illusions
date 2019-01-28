@@ -2,6 +2,7 @@
   "name": "Illusions",
   "short_name": "Illusions",
   "theme_color": "#242424",
+  "start_url": ".",
   "background_color": "#242424",
   "display": "fullscreen",
   "orientation": "landscape",
