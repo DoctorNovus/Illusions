@@ -3,10 +3,9 @@
   "short_name": "Illusions",
   "theme_color": "#242424",
   "lang": "en",
-  "start_url": "./?utm_source=homescreen",
+  "start_url": ".",
   "background_color": "#242424",
   "display": "fullscreen",
-  "orientation": "landscape",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
@@ -49,5 +48,4 @@
       "type": "image/png"
     }
   ],
-  "splash_pages": null
 }
