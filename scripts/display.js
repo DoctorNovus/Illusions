@@ -1,12 +1,39 @@
+function askPermission() {
+    return new Promise(function(resolve, reject) {
+      const permissionResult = Notification.requestPermission(function(result) {
+        resolve(result);
+      });
+  
+      if (permissionResult) {
+        permissionResult.then(resolve, reject);
+      }
+    })
+    .then(function(permissionResult) {
+      if (permissionResult !== 'granted') {
+        throw new Error('We weren\'t granted permission.');
+      }
+    });
+  }
+
+askPermission();
+
+function getNotificationPermissionState() {
+    if (navigator.permissions) {
+      return navigator.permissions.query({name: 'notifications'})
+      .then((result) => {
+        return result.state;
+      });
+    }
+  
+    return new Promise((resolve) => {
+      resolve(Notification.permission);
+    });
+  }
+
+setTimeout(displayNotification(), 5000);
+
 var player = new Player(200,200,100,100);
 var heal = new Healer();
-
-var audio = document.getElementById("audio")
-
-audio.play();
-setInterval(function play(){
-    audio.play();
-},19700);
 
 //variables
 var score = 0;

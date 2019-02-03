@@ -5,3 +5,7 @@ if("serviceWorker" in  navigator){
         console.error("Service Worker regiistration failed: "  + error);
     });
 }
+
+if("PushManager" in navigator){
+    
+}
