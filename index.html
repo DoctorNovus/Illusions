@@ -1,47 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Illusions</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="./css/index.css" />
-        <link rel="manifest" href="manifest.json">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="application-name" content="Illusions">
-        <meta name="apple-mobile-web-app-title" content="Illusions">
-        <meta name="msapplication-starturl" content=".">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="apple-touch-icon" sizes="128x128" href="./images/icons/icon-128x128.png">
-    </head>
+    <title>Illusions</title>
 
-    <body>
-        <div id="game">
-            <h2 id="score_id">Score: 0</h2>
-            <h2 id="level_id">Level: 1</h2>
-            <canvas id="canvas"></canvas>
-        </div>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <div id="gameOver">
-                <h1>Game Over</h1>
-                <h2 id="scoreCounter">Score: </h2>
-                <h2 id="levelCounter">Level: </h2>
-                <button id="reset">Reset</button>
-        </div>
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 
-        <div class="buttons_div">
-            <button class="buttons" id="buttonUp">Up</button>
-            <button class="buttons" id="buttonDown">Down</button>
-            <button class="buttons" id="buttonLeft">Left</button>
-            <button class="buttons" id="buttonRight">Right</button>
-        </div>
-        <script src="./js/app.js"></script>
-        <script src="./js/engine.js"></script>
-        <script src="./js/player.js"></script>
-        <script src="./js/enemy.js"></script>
-        <script src="./js/display.js"></script>
-        <script src="./js/index.js"></script>
-    </body>
+    <script type="text/javascript" src="scripts/jquery-3.3.1.js"></script>
+
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Illusions">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <!-- Windows -->
+    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <link rel="icon"
+         type="image/png"
+         href="images/icons/icon-144x144.png">
+  </head>
+  <body>
+    <div id="game">
+        <h2 id="score_id">Score: 0</h2>
+        <h2 id="level_id">Level: 1</h2>
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div id="gameOver">
+            <h1>Game Over</h1>
+            <h2 id="scoreCounter">Score: </h2>
+            <h2 id="levelCounter">Level: </h2>
+            <button id="reset">Reset</button>
+    </div>
+
+    <div class="buttons_div">
+        <button class="buttons" id="buttonUp">Up</button>
+        <button class="buttons" id="buttonDown">Down</button>
+        <button class="buttons" id="buttonLeft">Left</button>
+        <button class="buttons" id="buttonRight">Right</button>
+    </div>
+    <script type="text/javascript" src="./scripts/app.js"></script>
+    <script type="text/javascript" src="./scripts/engine.js"></script>
+    <script type="text/javascript" src="./scripts/player.js"></script>
+    <script type="text/javascript" src="./scripts/enemy.js"></script>
+    <script type="text/javascript" src="./scripts/display.js"></script>
+    <script type="text/javascript" src="./scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/shell.js"></script>
+  </body>
 </html>
