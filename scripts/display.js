@@ -79,6 +79,51 @@ hard.onclick = function(){
     run();
 }
 
+easy.ontouchstart = function(){
+    //velocity
+    velX = 5.0;
+    velY = 5.0;
+
+    //enemy objects
+    for(let i=0; i<10; i++){
+        enemyList.push(new Enemy());
+    }
+
+    game.style.display = "block";
+    mainmenu.style.display = "none";
+    run();
+}
+
+medium.ontouchstart = function(){
+    //velocity
+    velX = 7.0;
+    velY = 7.0;
+
+    //enemy objects
+    for(let i=0; i<20; i++){
+        enemyList.push(new Enemy());
+    }
+
+    game.style.display = "block";
+    mainmenu.style.display = "none";
+    run();
+}
+
+hard.ontouchstart = function(){
+    //velocity
+    velX = 10.0;
+    velY = 10.0;
+
+    //enemy objects
+    for(let i=0; i<30; i++){
+        enemyList.push(new Enemy());
+    }
+
+    game.style.display = "block";
+    mainmenu.style.display = "none";
+    run();
+}
+
 menu.style.width = window.innerWidth + "px";
 menu.style.height = window.innerHeight + "px";
 
