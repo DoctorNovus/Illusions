@@ -18,6 +18,66 @@ var buttonDown = document.getElementById("buttonDown");
 var buttonLeft = document.getElementById("buttonLeft");
 var buttonRight = document.getElementById("buttonRight");
 var resetButton = document.getElementById("reset");
+var switchToGame = document.getElementById("switchToGame");
+var menu = document.getElementById("mainmenu");
+
+//enemy list
+var enemyList = [
+    
+];
+
+//difficulty
+easy = document.getElementById("easy");
+medium = document.getElementById("medium");
+hard = document.getElementById("hard");
+
+easy.onclick = function(){
+    //velocity
+    velX = 5.0;
+    velY = 5.0;
+
+    //enemy objects
+    for(let i=0; i<10; i++){
+        enemyList.push(new Enemy());
+    }
+
+    game.style.display = "block";
+    mainmenu.style.display = "none";
+    run();
+}
+
+medium.onclick = function(){
+    //velocity
+    velX = 7.0;
+    velY = 7.0;
+
+    //enemy objects
+    for(let i=0; i<20; i++){
+        enemyList.push(new Enemy());
+    }
+
+    game.style.display = "block";
+    mainmenu.style.display = "none";
+    run();
+}
+
+hard.onclick = function(){
+    //velocity
+    velX = 10.0;
+    velY = 10.0;
+
+    //enemy objects
+    for(let i=0; i<30; i++){
+        enemyList.push(new Enemy());
+    }
+
+    game.style.display = "block";
+    mainmenu.style.display = "none";
+    run();
+}
+
+menu.style.width = window.innerWidth + "px";
+menu.style.height = window.innerHeight + "px";
 
 buttonUp.style.width = 75 + "px";
 buttonUp.style.height = 75 + "px";
@@ -31,26 +91,10 @@ buttonLeft.style.height = 75 + "px";
 buttonRight.style.width = 75 + "px";
 buttonRight.style.height = 75 + "px";
 
-//gameover
-gameOver.style.left = canvas.width / 2 + "px";
-gameOver.style.top = canvas.height / 2 + "px";
-
-//velocity
-velX = 5.0;
-velY = 5.0;
-
-//enemy list
-var enemyList = [
-    
-];
-
-//enemy objects
-for(let i=0; i<10; i++){
-    enemyList.push(new Enemy());
+function run(){
+    Engine.tick(tick);
+    Engine.zoom(100);
 }
-
-Engine.tick(tick);
-Engine.zoom(100);
 
 function tick(){
     Engine.clear();
@@ -167,7 +211,14 @@ function collision(){
         player.y < enemyList[0].y + 50 &&
         player.y + 100 > enemyList[0].y) {
             health -= 5 / 4;
-     }
+    }
+
+    if (player.x < enemyList[5].x + 50 &&
+        player.x + 100 > enemyList[5].x &&
+        player.y < enemyList[5].y + 50 &&
+        player.y + 100 > enemyList[5].y) {
+            health -= 5 / 4;
+    }
 }
 
 function detectingMobile(){

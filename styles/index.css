@@ -1,6 +1,5 @@
 body{
-    border: 2px solid blue;
-    background-color: silver;
+    background-color: skyblue;
     overflow: hidden;
 }
 
@@ -20,6 +19,7 @@ body{
     display: none;
     position: absolute;
     top: 0px;
+    left: 0px;
 }
 
 .buttons{
@@ -52,4 +52,27 @@ body{
 #buttonRight{
     right: 10px;
     bottom: 100px;
+}
+
+#game{
+    display: none;
+}
+
+#mainmenu{
+    display: block;
+    margin: 0px;
+}
+
+#switchToGame{
+    position: absolute;
+    border: 1px solid black;
+}
+
+#mainmenu button{
+    width: 100px;
+}
+
+#reset{
+    border: 2px solid purple;
+    background-color: blueviolet;
 }
