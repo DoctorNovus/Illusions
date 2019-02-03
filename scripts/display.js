@@ -1,6 +1,13 @@
 var player = new Player(200,200,100,100);
 var heal = new Healer();
 
+var audio = document.getElementById("audio")
+
+audio.play();
+setInterval(function play(){
+    audio.play();
+},197000);
+
 //variables
 var score = 0;
 var level = 1;
