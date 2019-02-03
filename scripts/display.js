@@ -5,6 +5,8 @@ var heal = new Healer();
 var score = 0;
 var level = 1;
 var health = 100;
+var healthIncrease = 5 / 25;
+var teleportRate = 2000;
 
 //ids
 var score_id = document.getElementById("score_id");
@@ -121,7 +123,7 @@ function tick(){
 setInterval(function randomize(){
     heal.x = Math.floor(Math.random() * canvas.width) + 1;
     heal.y = Math.floor(Math.random() * canvas.width) + 1;
-},2000);
+},1000);
 
 function scoreEdit(){
     score_id.innerHTML = "Score: " + score;
@@ -231,7 +233,7 @@ function collision(){
         player.y < heal.y + 50 &&
         player.y + 100 > heal.y) {
             if(health <= 95){
-                health += 5 / 25;
+                health += healthIncrease;
             }
     }
 }
@@ -239,6 +241,13 @@ function collision(){
 function detectingMobile(){
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         // some code..
+
+        healthIncrease = 5 / 5;
+        heal.width = 50;
+        heal.height = 50;
+        teleportRate = 1000;
+
+        //display buttons
         if(health > 0){
             buttonUp.style.display = "block";
             buttonDown.style.display = "block";
