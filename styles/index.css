@@ -56,10 +56,12 @@ body{
 
 #game{
     display: none;
+    visibility: hidden;
 }
 
 #mainmenu{
     display: block;
+    visibility: visible;
     margin: 0px;
 }
 
