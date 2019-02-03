@@ -6,7 +6,7 @@ var audio = document.getElementById("audio")
 audio.play();
 setInterval(function play(){
     audio.play();
-},197000);
+},19700);
 
 //variables
 var score = 0;
