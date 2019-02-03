@@ -23,6 +23,7 @@ var filesToCache = [
  "./images/icons/icon-256x256.png",
  "./index.html",
  "./manifest.json",
+ "music/game.mp3",
  "./scripts",
  "./scripts/app.js",
  "./scripts/jquery-3.3.1.js",
