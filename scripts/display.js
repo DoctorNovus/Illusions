@@ -1,4 +1,5 @@
 var player = new Player(200,200,100,100);
+var heal = new Healer();
 
 //variables
 var score = 0;
@@ -113,9 +114,14 @@ function tick(){
     }
     collision();
     detectingMobile();
+    randomizeheal();
     Engine.tick(tick);
-
 }
+
+setInterval(function randomize(){
+    heal.x = Math.floor(Math.random() * canvas.width) + 1;
+    heal.y = Math.floor(Math.random() * canvas.width) + 1;
+},2000);
 
 function scoreEdit(){
     score_id.innerHTML = "Score: " + score;
@@ -219,6 +225,15 @@ function collision(){
         player.y + 100 > enemyList[5].y) {
             health -= 5 / 4;
     }
+
+    if (player.x < heal.x + 50 &&
+        player.x + 100 > heal.x &&
+        player.y < heal.y + 50 &&
+        player.y + 100 > heal.y) {
+            if(health <= 95){
+                health += 5 / 25;
+            }
+    }
 }
 
 function detectingMobile(){
@@ -236,6 +251,10 @@ function detectingMobile(){
             buttonRight.style.display = "none";
         }
     }       
+}
+
+function randomizeheal(){
+    heal.create();
 }
 
 buttonUp.ontouchstart = function(){
