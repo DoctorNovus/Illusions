@@ -1,6 +1,5 @@
 var player = new Player(200,200,100,100);
-var heal = new Healer();
-
+var mode;
 //variables
 var score = 0;
 var level = 1;
@@ -24,6 +23,10 @@ var resetButton = document.getElementById("reset");
 var switchToGame = document.getElementById("switchToGame");
 var menu = document.getElementById("mainmenu");
 
+var heal1 = new Healer();
+var heal2 = new Healer();
+var heal3 = new Healer();
+
 //enemy list
 var enemyList = [
     
@@ -46,6 +49,7 @@ easy.onclick = function(){
 
     game.style.display = "block";
     mainmenu.style.display = "none";
+    mode = "easy";
     run();
 }
 
@@ -61,6 +65,7 @@ medium.onclick = function(){
 
     game.style.display = "block";
     mainmenu.style.display = "none";
+    mode = "medium";
     run();
 }
 
@@ -76,6 +81,7 @@ hard.onclick = function(){
 
     game.style.display = "block";
     mainmenu.style.display = "none";
+    mode = "hard";
     run();
 }
 
@@ -91,6 +97,7 @@ easy.ontouchstart = function(){
 
     game.style.display = "block";
     mainmenu.style.display = "none";
+    mode = "easy";
     run();
 }
 
@@ -106,6 +113,7 @@ medium.ontouchstart = function(){
 
     game.style.display = "block";
     mainmenu.style.display = "none";
+    mode = "medium";
     run();
 }
 
@@ -121,6 +129,7 @@ hard.ontouchstart = function(){
 
     game.style.display = "block";
     mainmenu.style.display = "none";
+    mode = "hard";
     run();
 }
 
@@ -139,12 +148,23 @@ buttonLeft.style.height = 75 + "px";
 buttonRight.style.width = 75 + "px";
 buttonRight.style.height = 75 + "px";
 
-function run(){
+function run(mode){
     Engine.tick(tick);
     Engine.zoom(100);
 }
 
 function tick(){
+    if(mode == "easy"){
+        easyMode();
+    }
+
+    if(mode == "medium"){
+        mediumMode();
+    }
+
+    if(mode == "hard"){
+        hardMode();
+    }
     Engine.clear();
     if(health > 0){
         score += 25;
@@ -159,16 +179,10 @@ function tick(){
         let enemy = enemyList[i];
         enemy.update(canvas);
     }
-    collision();
     detectingMobile();
     randomizeheal();
     Engine.tick(tick);
 }
-
-setInterval(function randomize(){
-    heal.x = Math.floor(Math.random() * canvas.width) + 1;
-    heal.y = Math.floor(Math.random() * canvas.width) + 1;
-},1000);
 
 function scoreEdit(){
     score_id.innerHTML = "Score: " + score;
@@ -251,7 +265,8 @@ function movement(){
     }
 }
 
-function collision(){
+//Difficulty Modes
+function easyMode(){
     if(health <= 0){
         gameOver.style.display = "block";
         game.style.display = "none";
@@ -259,6 +274,7 @@ function collision(){
         gOLevel.innerHTML = "Level: " + Math.floor(level);
     }
 
+    //Hurtful Enemies
     if (player.x < enemyList[0].x + 50 &&
         player.x + 100 > enemyList[0].x &&
         player.y < enemyList[0].y + 50 &&
@@ -273,13 +289,136 @@ function collision(){
             health -= 5 / 4;
     }
 
-    if (player.x < heal.x + 50 &&
-        player.x + 100 > heal.x &&
-        player.y < heal.y + 50 &&
-        player.y + 100 > heal.y) {
-            if(health <= 95){
-                health += healthIncrease;
-            }
+    if (player.x < heal1.x + 50 &&
+        player.x + 100 > heal1.x &&
+        player.y < heal1.y + 50 &&
+        player.y + 100 > heal1.y) {
+            health += 5 / 4;
+    }
+}
+
+function mediumMode(){
+    if(health <= 0){
+        gameOver.style.display = "block";
+        game.style.display = "none";
+        gOScore.innerHTML = "Score: " + score;
+        gOLevel.innerHTML = "Level: " + Math.floor(level);
+    }
+    
+    //Hurtful Enemies
+    if (player.x < enemyList[0].x + 50 &&
+        player.x + 100 > enemyList[0].x &&
+        player.y < enemyList[0].y + 50 &&
+        player.y + 100 > enemyList[0].y) {
+            health -= 5 / 4;
+    }
+
+    if (player.x < enemyList[5].x + 50 &&
+        player.x + 100 > enemyList[5].x &&
+        player.y < enemyList[5].y + 50 &&
+        player.y + 100 > enemyList[5].y) {
+            health -= 5 / 4;
+    }
+
+    if (player.x < enemyList[10].x + 50 &&
+        player.x + 100 > enemyList[10].x &&
+        player.y < enemyList[10].y + 50 &&
+        player.y + 100 > enemyList[10].y) {
+            health -= 5 / 4;
+    }
+
+    if (player.x < enemyList[15].x + 50 &&
+        player.x + 100 > enemyList[15].x &&
+        player.y < enemyList[15].y + 50 &&
+        player.y + 100 > enemyList[15].y) {
+            health -= 5 / 4;
+    }
+
+    if (player.x < heal1.x + 50 &&
+        player.x + 100 > heal1.x &&
+        player.y < heal1.y + 50 &&
+        player.y + 100 > heal1.y) {
+            health += 5 / 4;
+    }
+
+    if (player.x < heal2.x + 50 &&
+        player.x + 100 > heal2.x &&
+        player.y < heal2.y + 50 &&
+        player.y + 100 > heal2.y) {
+            health += 5 / 4;
+    }
+}
+
+function hardMode(){
+    if(health <= 0){
+        gameOver.style.display = "block";
+        game.style.display = "none";
+        gOScore.innerHTML = "Score: " + score;
+        gOLevel.innerHTML = "Level: " + Math.floor(level);
+    }
+
+    //Hurtful Enemies
+    if (player.x < enemyList[0].x + 50 &&
+        player.x + 100 > enemyList[0].x &&
+        player.y < enemyList[0].y + 50 &&
+        player.y + 100 > enemyList[0].y) {
+            health -= 5 / 4;
+    }
+
+    if (player.x < enemyList[5].x + 50 &&
+        player.x + 100 > enemyList[5].x &&
+        player.y < enemyList[5].y + 50 &&
+        player.y + 100 > enemyList[5].y) {
+            health -= 5 / 4;
+    }
+
+    if (player.x < enemyList[10].x + 50 &&
+        player.x + 100 > enemyList[10].x &&
+        player.y < enemyList[10].y + 50 &&
+        player.y + 100 > enemyList[10].y) {
+            health -= 5 / 4;
+    }
+
+    if (player.x < enemyList[15].x + 50 &&
+        player.x + 100 > enemyList[15].x &&
+        player.y < enemyList[15].y + 50 &&
+        player.y + 100 > enemyList[15].y) {
+            health -= 5 / 4;
+    }
+
+    if (player.x < enemyList[20].x + 50 &&
+        player.x + 100 > enemyList[20].x &&
+        player.y < enemyList[20].y + 50 &&
+        player.y + 100 > enemyList[20].y) {
+            health -= 5 / 4;
+    }
+
+    if (player.x < enemyList[25].x + 50 &&
+        player.x + 100 > enemyList[25].x &&
+        player.y < enemyList[25].y + 50 &&
+        player.y + 100 > enemyList[25].y) {
+            health -= 5 / 4;
+    }
+
+    if (player.x < heal1.x + 50 &&
+        player.x + 100 > heal1.x &&
+        player.y < heal1.y + 50 &&
+        player.y + 100 > heal1.y) {
+            health += 5 / 4;
+    }
+
+    if (player.x < heal2.x + 50 &&
+        player.x + 100 > heal2.x &&
+        player.y < heal2.y + 50 &&
+        player.y + 100 > heal2.y) {
+            health += 5 / 4;
+    }
+
+    if (player.x < heal3.x + 50 &&
+        player.x + 100 > heal3.x &&
+        player.y < heal3.y + 50 &&
+        player.y + 100 > heal3.y) {
+            health += 5 / 4;
     }
 }
 
@@ -307,9 +446,6 @@ function detectingMobile(){
     }       
 }
 
-function randomizeheal(){
-    heal.create();
-}
 
 buttonUp.ontouchstart = function(){
         player.up = true;
@@ -346,3 +482,46 @@ buttonRight.ontouchend = function(){
 resetButton.onclick = function(){window.location.reload()}
 
 resetButton.ontouchstart = function(){window.location.reload()}
+
+setInterval(function randomize(){
+    if(mode == "easy"){
+        heal1.x = Math.floor(Math.random() * canvas.width) + 1;
+        heal1.y = Math.floor(Math.random() * canvas.width) + 1;
+    }
+
+    if(mode == "medium"){
+        heal1.x = Math.floor(Math.random() * canvas.width) + 1;
+        heal1.y = Math.floor(Math.random() * canvas.width) + 1;
+
+        heal2.x = Math.floor(Math.random() * canvas.width) + 1;
+        heal2.y = Math.floor(Math.random() * canvas.width) + 1;
+    }
+
+    if(mode == "hard"){
+        heal1.x = Math.floor(Math.random() * canvas.width) + 1;
+        heal1.y = Math.floor(Math.random() * canvas.width) + 1;
+
+        heal2.x = Math.floor(Math.random() * canvas.width) + 1;
+        heal2.y = Math.floor(Math.random() * canvas.width) + 1;
+
+        heal3.x = Math.floor(Math.random() * canvas.width) + 1;
+        heal3.y = Math.floor(Math.random() * canvas.width) + 1;
+    }
+},1000);
+
+function randomizeheal(){
+    if(mode == "easy"){
+        heal1.create();
+    }
+
+    if(mode == "medium"){
+        heal1.create();
+        heal2.create();
+    }
+
+    if(mode == "hard"){
+        heal1.create();
+        heal2.create();
+        heal3.create();
+    }
+}
