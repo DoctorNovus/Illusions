@@ -30,6 +30,8 @@ function getNotificationPermissionState() {
     });
   }
 
+getNotificationPermissionState();
+
 setTimeout(displayNotification(), 5000);
 
 var player = new Player(200,200,100,100);
