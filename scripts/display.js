@@ -427,8 +427,14 @@ function detectingMobile(){
         // some code..
 
         healthIncrease = 5 / 5;
-        heal.width = 50;
-        heal.height = 50;
+        heal1.width = 50;
+        heal1.height = 50;
+
+        heal2.width = 50;
+        heal2.height = 50;
+
+        heal3.width = 50;
+        heal3.height = 50;
         teleportRate = 1000;
 
         //display buttons
