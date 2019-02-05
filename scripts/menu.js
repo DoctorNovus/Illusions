@@ -130,3 +130,7 @@ hard.style.borderTopRightRadius = 20 + "px";
 hardWidth = window.innerWidth / 4;
 hard.style.width = hardWidth + "px";
 hard.style.height = hardWidth + "px";
+
+discord.onclick = function(){
+    window.location = "https://discord.gg/pR5tx2T";
+}
