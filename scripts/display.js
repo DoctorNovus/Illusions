@@ -166,7 +166,7 @@ function tick(){
         hardMode();
     }
     Engine.clear();
-    if(health > 0){
+    if(health < 0){
         score += 25;
     }
     scoreEdit();
@@ -293,7 +293,9 @@ function easyMode(){
         player.x + 100 > heal1.x &&
         player.y < heal1.y + 50 &&
         player.y + 100 > heal1.y) {
-            health += 5 / 4;
+            if(health < 100){
+                health += 5 / 4;
+            }
     }
 }
 
@@ -338,14 +340,18 @@ function mediumMode(){
         player.x + 100 > heal1.x &&
         player.y < heal1.y + 50 &&
         player.y + 100 > heal1.y) {
-            health += 5 / 4;
+            if(health < 100){
+                health += 5 / 4;
+            }
     }
 
     if (player.x < heal2.x + 50 &&
         player.x + 100 > heal2.x &&
         player.y < heal2.y + 50 &&
         player.y + 100 > heal2.y) {
-            health += 5 / 4;
+            if(health < 100){
+                health += 5 / 4;
+            }
     }
 }
 
@@ -404,21 +410,27 @@ function hardMode(){
         player.x + 100 > heal1.x &&
         player.y < heal1.y + 50 &&
         player.y + 100 > heal1.y) {
-            health += 5 / 4;
+            if(health < 100){
+                health += 5 / 4;
+            }
     }
 
     if (player.x < heal2.x + 50 &&
         player.x + 100 > heal2.x &&
         player.y < heal2.y + 50 &&
         player.y + 100 > heal2.y) {
-            health += 5 / 4;
+            if(health < 100){
+                health += 5 / 4;
+            }
     }
 
     if (player.x < heal3.x + 50 &&
         player.x + 100 > heal3.x &&
         player.y < heal3.y + 50 &&
         player.y + 100 > heal3.y) {
-            health += 5 / 4;
+            if(health < 100){
+                health += 5 / 4;
+            }
     }
 }
 
@@ -438,7 +450,7 @@ function detectingMobile(){
         teleportRate = 1000;
 
         //display buttons
-        if(health > 0){
+        if(health < 0){
             buttonUp.style.display = "block";
             buttonDown.style.display = "block";
             buttonLeft.style.display = "block";
