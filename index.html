@@ -30,12 +30,14 @@
          href="images/icons/icon-144x144.png">
   </head>
   <body>
-    <audio src="music/game.mp3" id="audio"></audio>
+    
     <div id="mainmenu">
       <center>
-      <h1>Welcome to Illusions</h1>
-
-      <h2>Difficulty: </h2>
+      <img src="images/Title.png" id="title">
+      <img src="images/discordlogo.png" id="discord">
+      <button id="play">Play</button>
+      <button id="controls">Controls</button>
+      <button id="back">Back</button>
       
       <div id="difficulties">
         <button id="easy">Easy</button>
@@ -43,14 +45,16 @@
         <button id="hard">Hard</button>
       </div>
       
-      <h2>Mobile</h2>
-      <p>Buttons in lower right corner will control your movement</p>
+      <div id="controlsmenu">
+        <h2>Mobile</h2>
+        <p>Buttons in lower right corner will control your movement</p>
 
-      <h2>PC</h2>
-      <p>W: UP</p>
-      <p>A: LEFT</p>
-      <p>S: DOWN</p>
-      <p>D: RIGHT</p>
+        <h2>PC</h2>
+        <p>W: UP</p>
+        <p>A: LEFT</p>
+        <p>S: DOWN</p>
+        <p>D: RIGHT</p>
+      </div>
       </center>
     </div>
 
@@ -81,5 +85,6 @@
     <script type="text/javascript" src="./scripts/display.js"></script>
     <script type="text/javascript" src="./scripts/index.js"></script>
     <script type="text/javascript" src="./scripts/shell.js"></script>
+    <script type="text/javascript" src="./scripts/menu.js"></script>
   </body>
 </html>

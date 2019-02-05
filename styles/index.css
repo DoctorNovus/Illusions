@@ -80,3 +80,24 @@ body{
     border: 2px solid purple;
     background-color: blueviolet;
 }
+
+#difficulties{
+    display: none;
+}
+
+#controlsmenu{
+    display: none;
+}
+
+#back{
+    display: none;
+    position: absolute;
+    bottom: 0px;
+}
+
+#discord{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100px;
+}
