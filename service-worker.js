@@ -1,5 +1,5 @@
-var dataCacheName = 'template-pwa';
-var cacheName = 'template-pwa';
+var dataCacheName = 'template-pwav1';
+var cacheName = 'template-pwav1';
 var filesToCache = [
   '/',
  "./fonts",
@@ -23,11 +23,17 @@ var filesToCache = [
  "./images/icons/icon-256x256.png",
  "./index.html",
  "./manifest.json",
- "music/game.mp3",
+ "./images/discordlogo.png",
  "./scripts",
  "./scripts/app.js",
- "./scripts/jquery-3.3.1.js",
- "./scripts/materialize.js",
+ "./scripts/display.js",
+ "./scripts/enemy.js",
+ "./scripts/engine.js",
+ "./scripts/healorb.js",
+ "./scripts/index.js",
+ "./scripts/menu.js",
+ "./scripts/player.js",
+ "./scripts/shell.js",
  "./service-worker.js",
  "./styles",
  "./styles/materialize.css",
